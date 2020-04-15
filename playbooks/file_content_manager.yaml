@@ -6,7 +6,7 @@
   user: centos
   tasks:
   - name: Manage etc motd
-    linefile:
+    lineinfile:
       path: "/etc/motd"
       line: "This is hanged"
     

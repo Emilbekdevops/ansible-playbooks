@@ -1,0 +1,70 @@
+---
+- name: Word Press
+  hosts: 34.219.148.242
+  become: true
+  become_method: sudo
+  user: centos
+  tasks:
+  - name: Install package 
+    package:
+     name: Wordpress
+     state: latest
+
+
+  - name: add user
+    user: 
+      name: Bob
+      state: present
+
+
+  - name: add user
+    user: 
+      name: Ben
+      state: present
+
+
+  - name: add user
+    user: 
+      name: Lisa
+      state: present
+
+
+  - name: add user
+    user: 
+      name: Katty
+      state: present 
+  
+
+
+  # - name: Reboot
+  #   shell: reboot
+  #   ignore_errors: true
+
+
+  # # Do not assume the inventory_hostname is resolvable and delay 10 seconds at start
+  # - name: Wait 300 seconds for port 22 to become open and contain "OpenSSH"
+  #   wait_for:
+  #     port: 22
+  #     host: '{{ (ansible_ssh_host|default(ansible_host))|default(inventory_hostname) }}'
+  #     search_regex: OpenSSH
+  #     delay: 10
+  #   connection: local
+
+
+
+
+  # - name: Update kernel
+  #   when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "7")
+  #   dnf: 
+  #     name: kernel
+  #     state: latest
+  # - name: Update kernel
+  #   when: (ansible_distribution == "CentOS" and ansible_distribution_major_version == "6")
+  #   yum: 
+  #     name: kernel
+  #     state: latest
+  # - name: Update kernel
+  #   when: (ansible_distribution == "Ubuntu" and ansible_distribution_major_version == "8")
+  #   apt: 
+  #     name: kernel
+  #     state: latest

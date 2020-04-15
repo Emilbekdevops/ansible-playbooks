@@ -1,0 +1,12 @@
+---
+- name: Manage files
+  hosts: localhost
+  become: true
+  become_method: sudo
+  user: centos
+  tasks:
+  - name: Manage etc motd
+    linefile:
+      path: "/etc/motd"
+      line: "This is hanged"
+    
